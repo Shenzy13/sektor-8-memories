@@ -32,6 +32,54 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#8e8983;font-size:1
 @media(max-width:900px){.team-grid{grid-template-columns:repeat(3,1fr)}.story{gap:30px}.gallery{grid-auto-rows:180px}}
 @media(max-width:650px){.nav{height:68px}.navlinks{gap:12px;font-size:9px}.navlinks a:nth-child(1){display:none}.hero{min-height:690px}.hero h1{letter-spacing:-2px}.hero-content{padding-top:75px}.hero:before{background-position:58% center}.story{grid-template-columns:1fr;gap:15px}.story-number{font-size:90px}.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:150px;gap:8px}.shot:first-child{grid-row:span 2}.shot:nth-child(4){grid-column:span 2}.team-grid{grid-template-columns:repeat(2,1fr);gap:9px}.member-photo{height:170px}.member-info{padding:13px 11px}.member h3{font-size:13px}.messages{grid-template-columns:1fr}.mentor-card{padding:32px 20px}section{padding:75px 0}.music{right:12px;bottom:12px}.hero-meta{gap:14px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+/* SEKTOR 8 - CINEMATIC PHOTO GALLERY */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.gallery .shot {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(215,184,137,.35);
+    border-radius: 16px;
+    padding: 0;
+    background: #151515;
+    cursor: pointer;
+    aspect-ratio: 4 / 5;
+    transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.gallery .shot:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(215,184,137,.2);
+}
+
+.gallery .shot img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform .7s ease;
+}
+
+.gallery .shot:hover img {
+    transform: scale(1.08);
+}
+
+@media (min-width: 700px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 400px) {
+    .gallery {
+        gap: 9px;
+    }
+}
 </style>
 </head>
 <body>
